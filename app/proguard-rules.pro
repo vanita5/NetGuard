@@ -22,5 +22,33 @@
 
 #NetGuard
 -keepnames class eu.faircode.netguard.** { *; }
+
+#JNI
+-keepclasseswithmembernames class * {
+    native <methods>;
+}
+
+#JNI callbacks
+-keep class eu.faircode.netguard.Allowed { *; }
+-keep class eu.faircode.netguard.Packet { *; }
+-keep class eu.faircode.netguard.ResourceRecord { *; }
+-keep class eu.faircode.netguard.Usage { *; }
+-keep class eu.faircode.netguard.ServiceSinkhole {
+    void nativeExit(java.lang.String);
+    void nativeError(int, java.lang.String);
+    void logPacket(eu.faircode.netguard.Packet);
+    void dnsResolved(eu.faircode.netguard.ResourceRecord);
+    boolean isDomainBlocked(java.lang.String);
+    eu.faircode.netguard.Allowed isAddressAllowed(eu.faircode.netguard.Packet);
+    void accountUsage(eu.faircode.netguard.Usage);
+}
+
+#Support library
 -keep class android.support.v7.widget.** { *; }
 -dontwarn android.support.v4.**
+
+#Picasso
+-dontwarn com.squareup.okhttp.**
+
+#AdMob
+-dontwarn com.google.android.gms.internal.**

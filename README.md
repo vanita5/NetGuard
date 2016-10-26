@@ -1,7 +1,7 @@
 # NetGuard
 
-*NetGuard* is a simple way to block access to the internet - no root required.
-Applications can individually be allowed or denied access to your WiFi and/or mobile connection.
+*NetGuard* provides simple and advanced ways to block access to the internet - no root required.
+Applications and addresses can individually be allowed or denied access to your Wi-Fi and/or mobile connection.
 
 Blocking access to the internet can help:
 
@@ -9,137 +9,232 @@ Blocking access to the internet can help:
 * save your battery
 * increase your privacy
 
+NetGuard is the first free and open source no-root firewall for Android.
+
+Features:
+
+* Simple to use
+* No root required
+* 100% open source
+* No calling home
+* No tracking or analytics
+* Actively developed and supported
+* Android 4.0 and later supported
+* IPv4/IPv6 TCP/UDP supported
+* Tethering supported
+* Multiple device users supported
+* Optionally allow when screen on
+* Optionally block when roaming
+* Optionally block system applications
+* Optionally forward ports, also to external addresses (not available if installed from the Play store)
+* Optionally notify when an application accesses the internet
+* Optionally record network usage per application per address
+* Optionally [block ads using a hosts file](https://github.com/M66B/NetGuard/blob/master/ADBLOCKING.md) (not available if installed from the Play store)
+* Material design theme with light and dark theme
+
+PRO features:
+
+* Log all outgoing traffic; search and filter access attempts; export PCAP files to analyze traffic
+* Allow/block individual addresses per application
+* New application notifications; configure NetGuard directly from the notification
+* Display network speed graph in a status bar notification
+* Select from five additional themes in both light and dark version
+
+There is no other no-root firewall offering all these features.
+
+Requirements:
+
+* Android 4.0 or later
+* A [compatible device](#compatibility)
+
 Downloads:
 
 * [GitHub](https://github.com/M66B/NetGuard/releases)
-* [Play store](https://play.google.com/apps/testing/eu.faircode.netguard) (beta)
-* [F-Droid](https://f-droid.org/repository/browse/?fdfilter=netguard&fdid=eu.faircode.netguard) (unsupported, often outdated)
+* [On Google Play](https://play.google.com/store/apps/details?id=eu.faircode.netguard) (stable)
+* [On Google Play](https://play.google.com/apps/testing/eu.faircode.netguard) (beta)
+* [XDA Labs App](http://forum.xda-developers.com/android/apps-games/labs-t3241866) ([web page](https://labs.xda-developers.com/store/app/eu.faircode.netguard))
 
-<img src="screenshot.png" width="320" height="569" />
-
-Features
---------
-
-* No root required
-* Simple to use
-* Free of charge
-* Open source
-* No extra battery usage
-* No calling home
-* No tracking or analytics
-* No ads
-* IPv4/IPv6 TCP/UDP supported
-* Block system and user applications
-
-NetGuard does not even require the *internet* permission.
-NetGuard is possibly the first free and open source no-root firewall for Android.
-
-Most of these features are the result of sending selected traffic to a sinkhole, instead of filtering all internet traffic.
-This means that advanced features, like address based filtering (needed for ad blocking), traffic logging, and on-demand configuration, are not possible.
-Routing selected traffic into a sinkhole relies on an API introduced in Android 5.0 (Lollipop),
-therefore older Android versions can unfortunately not be supported.
-
-Usage
------
+Usage:
 
 * Enable the firewall using the switch in the action bar
-* Allow/deny WiFi/mobile internet access using the icons at the right side of the application list
+* Allow/deny Wi-Fi/mobile internet access using the icons along the right side of the application list
 
-Permissions
------------
+You can use the settings menu to change from blacklist mode (allow all in *Settings* but block unwanted applications in list) to whitelist mode (block all in *Settings* but allow favorite applications in list).
 
-* ACCESS_NETWORK_STATE: to check if the device is connected to the internet through WiFi
-* RECEIVE_BOOT_COMPLETED: to start the firewall when booting the device
+* Red/orange/yellow/amber = internet access denied
+* Teal/blue/purple/grey = internet access allowed
+
+<img src="https://raw.githubusercontent.com/M66B/NetGuard/master/screenshots/01-main.png" width="320" height="569" />
+<img src="https://raw.githubusercontent.com/M66B/NetGuard/master/screenshots/02-main-details.png" width="320" height="569" />
+<img src="https://raw.githubusercontent.com/M66B/NetGuard/master/screenshots/03-main-access.png" width="320" height="569" />
+<img src="https://raw.githubusercontent.com/M66B/NetGuard/master/screenshots/08-notifications.png" width="320" height="569" />
+
+For more screenshots, see [here](https://github.com/M66B/NetGuard/tree/master/screenshots).
 
 Compatibility
 -------------
 
-Devices / ROMs with a broken VPN implementation:
+NetGuard will not work or crash when the package *com.android.vpndialogs* has been removed or otherwise is unavailable.
 
-* [Samsung Galaxy A5 / Android 5.02](https://github.com/M66B/NetGuard/issues/20) (all traffic blocked)
-* Asus ZenFone 2 / Android 5.0.2/5.1.1, reported on XDA (all traffic blocked)
 
-NetGuard will crash when the package *com.android.vpndialogs* has been removed or otherwise is unavailable.
-
-[Greenifying](https://play.google.com/store/apps/details?id=com.oasisfeng.greenify) NetGuard will result in rules not being applied
-when connectivity changes from WiFi/mobile, changing from passive to active use and changing from roaming/not roaming.
-
+<a name="FAQ"></a>
 Frequently Asked Questions (FAQ)
 --------------------------------
 
+<a name="FAQ0"></a>
+[**(0) How do I use NetGuard?**](https://github.com/M66B/NetGuard/blob/master/FAQ.md#FAQ0)
+
 <a name="FAQ1"></a>
-**(1) Can NetGuard completely protect my privacy?**
-
-No - nothing can completely protect your privacy.
-NetGuard will do its best, but it is limited by the fact it must use the VPN service.
-This is the trade-off required to make a firewall which does not require root access.
-The firewall can only start when Android "allows" it to start,
-so it will not offer protection during early boot-up (although your network may not be loaded at that time).
-It will, however, be much better than nothing, especially if you are not rebooting often.
-
-If you want to protect yourself more, you can (at least in theory) disable WiFi and mobile data before rebooting,
-and only enable them on reboot, after the firewall service has started (and the small key icon is visible in the status bar).
-
-Thanks @[pulser](https://github.com/pulser/)
+[**(1) Can NetGuard completely protect my privacy?**](https://github.com/M66B/NetGuard/blob/master/FAQ.md#FAQ1)
 
 <a name="FAQ2"></a>
-**(2) Can I use VPN applications while using NetGuard?**
-
-If the VPN application is using the [VPN service](http://developer.android.com/reference/android/net/VpnService.html),
-then no, because NetGuard needs to use this service, and Android allows only one application at a time to use this service.
+[**(2) Can I use another VPN application while using NetGuard?**](https://github.com/M66B/NetGuard/blob/master/FAQ.md#FAQ2)
 
 <a name="FAQ3"></a>
-**(3) Can I use NetGuard on any Android version?**
-
-No, because NetGuard uses the  [addDisallowedApplication](http://developer.android.com/reference/android/net/VpnService.Builder.html#addDisallowedApplication(java.lang.String))
-method, the minimum required Android version is 5.0 (Lollipop).
+[**(3) Can I use NetGuard on any Android version?**](https://github.com/M66B/NetGuard/blob/master/FAQ.md#FAQ3)
 
 <a name="FAQ4"></a>
-**(4) Will NetGuard use extra battery power?**
-
-No, unlike most of the similar closed source alternatives.
-
-<a name="FAQ5"></a>
-**(5) Can you add selective allowing/blocking applications/IP addresses?**
-
-Unfortunately this is not possible without using significant battery power
-and adding complex code to do network translation from OSI layer 3 to layer 4
-(and thus implementing a TCP/IP stack), which will inevitably introduce bugs as well.
-This is how most (all?) other no-root firewalls work.
-NetGuard is unique, because it doesn't implement a TCP/IP stack and is therefore both highly efficient and simple.
-
-For more advanced use cases, rooting your device and using an iptables based firewall,
-like [AFWall+](https://github.com/ukanth/afwall) might be a better option, and will not sacrifice any battery power.
+[**(4) Will NetGuard use extra battery power?**](https://github.com/M66B/NetGuard/blob/master/FAQ.md#FAQ4)
 
 <a name="FAQ6"></a>
-**(6) Will NetGuard send my internet traffic to an external (VPN) server?**
-
-No. It cannot even do this, because NetGuard does not even have the *internet* permission.
+[**(6) Will NetGuard send my internet traffic to an external (VPN) server?**](https://github.com/M66B/NetGuard/blob/master/FAQ.md#FAQ6)
 
 <a name="FAQ7"></a>
-**(7) Why are applications without internet permission shown?**
+[**(7) Why are applications without internet permission shown?**](https://github.com/M66B/NetGuard/blob/master/FAQ.md#FAQ7)
 
-Internet permission can be granted with each application update without user consent.
-By showing all applications, NetGuard allows you to block internet access before such an update occurs.
+<a name="FAQ8"></a>
+[**(8) What do I need to enable for the Google Play™ store app to work?**](https://github.com/M66B/NetGuard/blob/master/FAQ.md#FAQ8)
+
+<a name="FAQ9"></a>
+[**(9) Why is the VPN service being restarted?**](https://github.com/M66B/NetGuard/blob/master/FAQ.md#FAQ9)
+
+<a name="FAQ10"></a>
+[**(10) Will you provide a Tasker plug-in?**](https://github.com/M66B/NetGuard/blob/master/FAQ.md#FAQ10)
+
+<a name="FAQ13"></a>
+[**(13) How can I remove the ongoing NetGuard entry in the notification screen?**](https://github.com/M66B/NetGuard/blob/master/FAQ.md#FAQ13)
+
+<a name="FAQ14"></a>
+[**(14) Why can't I select OK to approve the VPN connection request?**](https://github.com/M66B/NetGuard/blob/master/FAQ.md#FAQ14)
+
+<a name="FAQ15"></a>
+[**(15) Why won't you support the F-Droid builds?**](https://github.com/M66B/NetGuard/blob/master/FAQ.md#FAQ15)
+
+<a name="FAQ16"></a>
+[**(16) Why are some applications shown dimmed?**](https://github.com/M66B/NetGuard/blob/master/FAQ.md#FAQ16)
+
+<a name="FAQ17"></a>
+[**(17) Why is NetGuard using so much memory?**](https://github.com/M66B/NetGuard/blob/master/FAQ.md#FAQ17)
+
+<a name="FAQ18"></a>
+[**(18) Why can't I find NetGuard in the Google Play™ store app?**](https://github.com/M66B/NetGuard/blob/master/FAQ.md#FAQ18)
+
+<a name="FAQ19"></a>
+[**(19) Why does application XYZ still have internet access?**](https://github.com/M66B/NetGuard/blob/master/FAQ.md#FAQ19)
+
+<a name="FAQ20"></a>
+[**(20) Can I Greenify/hibernate NetGuard?**](https://github.com/M66B/NetGuard/blob/master/FAQ.md#FAQ20)
+
+<a name="FAQ21"></a>
+[**(21) Does doze mode affect NetGuard?**](https://github.com/M66B/NetGuard/blob/master/FAQ.md#FAQ21)
+
+<a name="FAQ22"></a>
+[**(22) Can I tether / use Wi-Fi calling while using NetGuard?**](https://github.com/M66B/NetGuard/blob/master/FAQ.md#FAQ22)
+
+<a name="FAQ24"></a>
+[**(24) Can you remove the notification from the status bar?**](https://github.com/M66B/NetGuard/blob/master/FAQ.md#FAQ24)
+
+<a name="FAQ25"></a>
+[**(25) Can you add a 'select all'?**](https://github.com/M66B/NetGuard/blob/master/FAQ.md#FAQ25)
+
+<a name="FAQ27"></a>
+[**(27) How do I read the blocked traffic log?**](https://github.com/M66B/NetGuard/blob/master/FAQ.md#FAQ27)
+
+<a name="FAQ28"></a>
+[**(28) Why is Google connectivity services allowed internet access by default?**](https://github.com/M66B/NetGuard/blob/master/FAQ.md#FAQ28)
+
+<a name="FAQ29"></a>
+[**(29) Why do I get 'The item you requested is not available for purchase'?**](https://github.com/M66B/NetGuard/blob/master/FAQ.md#FAQ29)
+
+<a name="FAQ30"></a>
+[**(30) Can I also run AFWall+ on the same device?**](https://github.com/M66B/NetGuard/blob/master/FAQ.md#FAQ30)
+
+<a name="FAQ31"></a>
+[**(31) Why can some applications be configured as a group only?**](https://github.com/M66B/NetGuard/blob/master/FAQ.md#FAQ31)
+
+<a name="FAQ32"></a>
+[**(32) Why is the battery/network usage of NetGuard so high**](https://github.com/M66B/NetGuard/blob/master/FAQ.md#FAQ32)
+
+<a name="FAQ33"></a>
+[**(33) Can you add profiles?**](https://github.com/M66B/NetGuard/blob/master/FAQ.md#FAQ33)
+
+<a name="FAQ34"></a>
+[**(34) Can you add the condition 'when on foreground'?**](https://github.com/M66B/NetGuard/blob/master/FAQ.md#FAQ34)
+
+<a name="FAQ35"></a>
+[**(35) Why does the VPN not start?**](https://github.com/M66B/NetGuard/blob/master/FAQ.md#FAQ35)
+
+<a name="FAQ36"></a>
+[**(36) Can you add PIN or password protection?**](https://github.com/M66B/NetGuard/blob/master/FAQ.md#FAQ36)
+
+<a name="FAQ37"></a>
+[**(37) Why are the pro features so expensive?**](https://github.com/M66B/NetGuard/blob/master/FAQ.md#FAQ37)
+
+<a name="FAQ38"></a>
+[**(38) Why did NetGuard stop running?**](https://github.com/M66B/NetGuard/blob/master/FAQ.md#FAQ38)
+
+<a name="FAQ39"></a>
+[**(39) How does a VPN based firewall differ from a iptables based firewall?**](https://github.com/M66B/NetGuard/blob/master/FAQ.md#FAQ39)
+
+<a name="FAQ40"></a>
+[**(40) Can you add schedules?**](https://github.com/M66B/NetGuard/blob/master/FAQ.md#FAQ40)
+
+<a name="FAQ41"></a>
+[**(41) Can you add wildcards?**](https://github.com/M66B/NetGuard/blob/master/FAQ.md#FAQ41)
+
+<a name="FAQ42"></a>
+[**(42) Why is permission ... needed?**](https://github.com/M66B/NetGuard/blob/master/FAQ.md#FAQ42)
+
+<a name="FAQ43"></a>
+[**(43) I get 'This app is causing your device to run slowly'**](https://github.com/M66B/NetGuard/blob/master/FAQ.md#FAQ43)
+
+<a name="FAQ44"></a>
+[**(44) I don't get notifications on access**](https://github.com/M66B/NetGuard/blob/master/FAQ.md#FAQ44)
+
+<a name="FAQ45"></a>
+[**(45) Does NetGuard handle incoming connections?**](https://github.com/M66B/NetGuard/blob/master/FAQ.md#FAQ45)
+
+<a name="FAQ46"></a>
+[**(46) Can I get a refund?**](https://github.com/M66B/NetGuard/blob/master/FAQ.md#FAQ46)
 
 Support
 -------
 
-* Questions: please [use this XDA-Developers forum thread](http://forum.xda-developers.com/showthread.php?t=3233012)
-* Feature requests and bugs: please [report an issue on GitHub](https://github.com/M66B/NetGuard/issues/new)
+For questions, feature requests and bug reports, please [use this XDA-Developers forum thread](http://forum.xda-developers.com/showthread.php?t=3233012)
 
-Please do not use GitHub for questions.
+**There is no support on ad blocking.**
 
 Contributing
 ------------
 
-Translations:
+*Building*
+
+Building is simple, if you install the right tools:
+
+* [Android Studio 2.1](http://developer.android.com/sdk/)
+* [Android NDK r12](http://developer.android.com/tools/sdk/ndk/)
+
+The native code is built as part of the Android Studio project.
+
+It is expected that you can solve build problems yourself, so there is no support on building.
+If you cannot build yourself, there are prebuilt versions of NetGuard available [here](https://github.com/M66B/NetGuard/releases).
+
+*Translating*
 
 * Translations to other languages are welcomed
-* Check if the language [is supported by Android](http://stackoverflow.com/questions/7973023/what-is-the-list-of-supported-languages-locales-on-android) and find its locale
-* Copy [this file](https://github.com/M66B/NetGuard/blob/master/app/src/main/res/values/strings.xml) to the correct locale folder
-* Translate the strings in the copied file and omit all lines with **translatable="false"**
-* Create a [pull request on GitHub](https://help.github.com/articles/using-pull-requests) for the new/updated translation
+* You can translate online [here](https://crowdin.com/project/netguard/)
+* If your language is not listed, please send a message to marcel(plus)netguard(at)faircode(dot)eu
+* You can see the status of all translations [here](https://crowdin.com/project/netguard).
 
 Please note that you agree to the license below by contributing, including the copyright.
 
@@ -156,7 +251,7 @@ License
 
 [GNU General Public License version 3](http://www.gnu.org/licenses/gpl.txt)
 
-Copyright (c) 2015 Marcel Bokhorst ([M66B](http://forum.xda-developers.com/member.php?u=2799345))
+Copyright (c) 2015-2016 Marcel Bokhorst ([M66B](http://forum.xda-developers.com/member.php?u=2799345))
 
 All rights reserved
 
@@ -174,3 +269,8 @@ GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
 along with NetGuard. If not, see [http://www.gnu.org/licenses/](http://www.gnu.org/licenses/).
+
+Trademarks
+----------
+
+*Android is a trademark of Google Inc. Google Play is a trademark of Google Inc*

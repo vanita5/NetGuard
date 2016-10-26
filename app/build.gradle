@@ -1,41 +1,92 @@
-apply plugin: 'com.android.application'
+apply plugin: 'com.android.model.application'
 
-android {
-    compileSdkVersion 23
-    buildToolsVersion "23.0.2"
+model {
+    android {
+        compileSdkVersion = 25
+        buildToolsVersion = "25"
 
-    defaultConfig {
-        applicationId "eu.faircode.netguard"
-        minSdkVersion 21
-        targetSdkVersion 23
-        versionCode 13
-        versionName "0.13"
-    }
-    buildTypes {
-        release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-            applicationVariants.all { variant ->
-                setOutputFile(variant, defaultConfig)
+        defaultConfig {
+            applicationId = "eu.faircode.netguard"
+        }
+
+        compileOptions.with {
+            sourceCompatibility JavaVersion.VERSION_1_7
+            targetCompatibility JavaVersion.VERSION_1_7
+        }
+
+        ndk {
+            platformVersion = "14"
+            moduleName = "netguard"
+            toolchain = "clang"
+            ldLibs.add("log")
+        }
+
+        sources {
+            main {
+                jni {
+                    source {
+                        srcDirs.removeAll()
+                        srcDirs.add('src/main/jni/netguard')
+                    }
+                    exportedHeaders {
+                    }
+                }
+            }
+        }
+
+        buildTypes {
+            release {
+                minifyEnabled = true
+                useProguard = true
+                proguardFiles.add(file('proguard-rules.pro'))
+                ndk.with {
+                    debuggable = false
+                }
+            }
+            debug {
+                minifyEnabled = true
+                useProguard = true
+                proguardFiles.add(file('proguard-rules.pro'))
+                ndk.with {
+                    debuggable = false
+                }
+            }
+        }
+
+        productFlavors {
+            create("all") {
+                versionName = "2.55"
+                minSdkVersion.apiLevel = 14
+                targetSdkVersion.apiLevel = 25
+                versionCode = 2016101201
+                archivesBaseName = "NetGuard-v$versionName"
+            }
+            create("lollipop-and-later") {
+                versionName = "2.55"
+                minSdkVersion.apiLevel = 20
+                targetSdkVersion.apiLevel = 25
+                versionCode = 2016101211
+                archivesBaseName = "NetGuard-v$versionName"
+            }
+            create("kitkat-and-earlier") {
+                versionName = "2.55"
+                minSdkVersion.apiLevel = 14
+                maxSdkVersion = 19
+                targetSdkVersion.apiLevel = 25
+                versionCode = 2016101221
+                archivesBaseName = "NetGuard-v$versionName"
             }
         }
     }
 }
 
-def setOutputFile(variant, defaultConfig) {
-    variant.outputs.each { output ->
-        def fileName = "NetGuard-v" + defaultConfig.versionName + ".apk"
-        if (output.zipAlign)
-            output.outputFile = new File(output.outputFile.parent, fileName)
-        else
-            output.packageApplication.outputFile = new File(output.packageApplication.outputFile.parent, fileName)
-    }
-}
-
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
-    testCompile 'junit:junit:4.12'
-    compile 'com.android.support:appcompat-v7:23.1.0'
-    compile 'com.android.support:recyclerview-v7:23.1.0'
-    compile 'com.squareup.picasso:picasso:2.5.2'
+    compile 'com.android.support:appcompat-v7:24.+'
+    compile 'com.android.support:recyclerview-v7:24.+'
+    compile 'com.squareup.picasso:picasso:2.5.+'
+    compile 'com.google.firebase:firebase-core:9.2.+'
+    compile 'com.google.firebase:firebase-ads:9.2.+'
 }
+
+apply plugin: 'com.google.gms.google-services'
