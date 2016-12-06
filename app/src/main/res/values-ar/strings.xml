@@ -38,6 +38,7 @@
   <string name="menu_reset">إعادة تعيين</string>
   <string name="menu_add">إضافة</string>
   <string name="menu_delete">حذف</string>
+  <string name="menu_cleanup">Cleanup</string>
   <string name="title_protocol">بروتوكول</string>
   <string name="title_dport">المنفذ المصدر</string>
   <string name="title_raddr">عنوان الوجهة</string>
@@ -75,6 +76,7 @@
   <string name="setting_filter">تصفية الحركة</string>
   <string name="setting_track_usage">متابعة استخدام الشبكة</string>
   <string name="setting_reset_usage">إعادة تعيين استخدام الشبكة</string>
+  <string name="setting_show_resolved">Show resolved domain names</string>
   <string name="setting_block_domains">حظر أسماء نطاقات</string>
   <string name="setting_forwarding">توجيه المنفذ</string>
   <string name="setting_vpn4">IPv4 للشبكة الافتراضية الخاصة: %s</string>

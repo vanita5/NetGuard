@@ -38,6 +38,7 @@
   <string name="menu_reset">Ripristina</string>
   <string name="menu_add">Aggiungi</string>
   <string name="menu_delete">Cancella</string>
+  <string name="menu_cleanup">Cleanup</string>
   <string name="title_protocol">Protocollo</string>
   <string name="title_dport">Porta di origine</string>
   <string name="title_raddr">Indirizzo di destinazione</string>
@@ -75,6 +76,7 @@
   <string name="setting_filter">Filtra traffico</string>
   <string name="setting_track_usage">Tieni traccia dell\'utilizzo della rete</string>
   <string name="setting_reset_usage">Reimposta dati sull\'utilizzo della rete</string>
+  <string name="setting_show_resolved">Show resolved domain names</string>
   <string name="setting_block_domains">Blocca nomi di dominio</string>
   <string name="setting_forwarding">Port forwarding</string>
   <string name="setting_vpn4">VPN IPv4: %s</string>

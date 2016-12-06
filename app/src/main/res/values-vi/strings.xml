@@ -38,6 +38,7 @@
   <string name="menu_reset">Thiết lập lại</string>
   <string name="menu_add">Thêm mới</string>
   <string name="menu_delete">Xoá</string>
+  <string name="menu_cleanup">Cleanup</string>
   <string name="title_protocol">Giao thức</string>
   <string name="title_dport">Cổng nguồn</string>
   <string name="title_raddr">Địa chỉ đích</string>
@@ -75,6 +76,7 @@
   <string name="setting_filter">Lọc lưu lượng truy cập</string>
   <string name="setting_track_usage">Theo dõi cách sử dụng mạng</string>
   <string name="setting_reset_usage">Thiết lập lại cách sử dụng mạng</string>
+  <string name="setting_show_resolved">Show resolved domain names</string>
   <string name="setting_block_domains">Chặn tên miền</string>
   <string name="setting_forwarding">Cổng chuyển tiếp</string>
   <string name="setting_vpn4">VPN IPv4: %s</string>

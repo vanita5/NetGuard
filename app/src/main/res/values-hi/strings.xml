@@ -40,6 +40,7 @@
   <string name="menu_reset">रीसेट</string>
   <string name="menu_add">जोड़ना</string>
   <string name="menu_delete">मिटाना</string>
+  <string name="menu_cleanup">Cleanup</string>
   <string name="title_protocol">मसविदा बनाना</string>
   <string name="title_dport">स्रोत पोर्ट</string>
   <string name="title_raddr">गंतव्य पता</string>
@@ -77,6 +78,7 @@
   <string name="setting_filter">फ़िल्टर यातायात</string>
   <string name="setting_track_usage">नेटवर्क के उपयोग को ट्रैक</string>
   <string name="setting_reset_usage">नेटवर्क उपयोग रीसेट करें</string>
+  <string name="setting_show_resolved">Show resolved domain names</string>
   <string name="setting_block_domains">ब्लॉक डोमेन नाम</string>
   <string name="setting_forwarding">पोर्ट अग्रेषण</string>
   <string name="setting_vpn4">VPN IPv4: %s</string>

@@ -39,6 +39,7 @@
   <string name="menu_reset">Zurücksetzen</string>
   <string name="menu_add">Hinzufügen</string>
   <string name="menu_delete">Löschen</string>
+  <string name="menu_cleanup">Bereinigen</string>
   <string name="title_protocol">Protokoll</string>
   <string name="title_dport">Quellport</string>
   <string name="title_raddr">Zieladresse</string>
@@ -76,6 +77,7 @@
   <string name="setting_filter">Datenverkehr filtern</string>
   <string name="setting_track_usage">Netzwerknutzung verfolgen</string>
   <string name="setting_reset_usage">Netzwerknutzung zurücksetzen</string>
+  <string name="setting_show_resolved">Show resolved domain names</string>
   <string name="setting_block_domains">Domainnamen blockieren</string>
   <string name="setting_forwarding">Portweiterleitung</string>
   <string name="setting_vpn4">VPN-IPv4: %s</string>
@@ -214,7 +216,7 @@
   <string name="title_pro_notify">Benachrichtigung über neue App</string>
   <string name="title_pro_speed">Netzwerkgeschwindigkeitsgraphbenachrichtigung</string>
   <string name="title_pro_theme">Aussehen (Design, Farben)</string>
-  <string name="title_pro_all">Alles über Pro-Funktionen</string>
+  <string name="title_pro_all">Alle oben stehenden Pro-Funktionen</string>
   <string name="title_pro_dev">Entwicklung unterstützen</string>
   <string name="title_pro_buy">Kaufen</string>
   <string name="title_pro_bought">Aktiviert</string>

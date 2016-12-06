@@ -39,6 +39,7 @@
   <string name="menu_reset">Herstellen</string>
   <string name="menu_add">Toevoegen</string>
   <string name="menu_delete">Verwijderen</string>
+  <string name="menu_cleanup">Cleanup</string>
   <string name="title_protocol">Protocol</string>
   <string name="title_dport">Bronpoort</string>
   <string name="title_raddr">Bestemmingsadres</string>
@@ -76,6 +77,7 @@
   <string name="setting_filter">Verkeer filteren</string>
   <string name="setting_track_usage">Bijhouden van netwerkgebruik</string>
   <string name="setting_reset_usage">Reset netwerkgebruik</string>
+  <string name="setting_show_resolved">Show resolved domain names</string>
   <string name="setting_block_domains">Blokkeer domeinnamen</string>
   <string name="setting_forwarding">Port forwarding</string>
   <string name="setting_vpn4">VPN-IPv4: %s</string>
@@ -174,9 +176,9 @@ Uw internetverkeer wordt niet verzonden naar een VPN-server.</string>
   <string name="msg_queue">NetGuard is bezig</string>
   <string name="msg_update">Update beschikbaar, tik om te downloaden</string>
   <string name="msg_usage">You can allow (greenish) or deny (reddish) Wi-Fi or mobile internet access to by tapping on the icons next to an application</string>
-  <string name="msg_whitelist">Internet access is allowed by default, this can be changed in the settings</string>
-  <string name="msg_push">Push messages are mostly handled by the system component Play services, which is allowed internet access by default</string>
-  <string name="msg_system">Managing system applications can be enabled in the settings</string>
+  <string name="msg_whitelist">Internet access is allowed by default (blacklist mode), this can be changed in the settings</string>
+  <string name="msg_push">Incoming (push) messages are mostly handled by the system component Play services, which is allowed internet access by default</string>
+  <string name="msg_system">Managing all (system) applications can be enabled in the settings</string>
   <string name="msg_issue">Please describe the problem and indicate the time of the problem:</string>
   <string name="title_unmetered_allowed">Ongelimiteerde verkeer is toegestaan</string>
   <string name="title_unmetered_blocked">Ongelimiteerde verkeer wordt geblokkeerd</string>

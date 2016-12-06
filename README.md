@@ -207,6 +207,12 @@ Frequently Asked Questions (FAQ)
 <a name="FAQ46"></a>
 [**(46) Can I get a refund?**](https://github.com/M66B/NetGuard/blob/master/FAQ.md#FAQ46)
 
+<a name="FAQ47"></a>
+[**(47) Why are there in application advertisements?**](https://github.com/M66B/NetGuard/blob/master/FAQ.md#FAQ47)
+
+<a name="FAQ48"></a>
+[**(48) Why are some domain names blocked while they are set to be allowed?**](https://github.com/M66B/NetGuard/blob/master/FAQ.md#FAQ48)
+
 Support
 -------
 
